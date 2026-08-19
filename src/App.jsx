@@ -24,7 +24,7 @@ const BootSequence = ({ onComplete }) => {
   ];
 
   useEffect(() => {
-    const bootAudio = new Audio('./boot.mp3');
+    const bootAudio = new Audio(`${import.meta.env.BASE_URL}boot.mp3`);
     bootAudio.volume = 0.5;
     
     const playPromise = bootAudio.play();
@@ -253,7 +253,7 @@ export default function App() {
 
   const [isPersonalLogUnlocked, setIsPersonalLogUnlocked] = useState(false);
 
-  const { playHover, stopHover } = useHoverSound('./hover.mp3');
+  const { playHover, stopHover } = useHoverSound(`${import.meta.env.BASE_URL}hover.mp3`);
 
   useEffect(() => {
     localStorage.setItem('nierSafeMode', recruiterMode);
@@ -261,7 +261,7 @@ export default function App() {
 
   const playClick = useCallback(() => {
     try {
-      const audio = new Audio('./click.mp3');
+      const audio = new Audio(`${import.meta.env.BASE_URL}click.mp3`);
       audio.volume = 0.2; 
       audio.play();
     } catch (error) {
@@ -321,7 +321,7 @@ export default function App() {
   }, [safePlayClick]);
 
   useEffect(() => {
-    bgMusicRef.current = new Audio('./bg-music.mp3'); 
+    bgMusicRef.current = new Audio(`${import.meta.env.BASE_URL}bg-music.mp3`); 
     bgMusicRef.current.loop = true;
     bgMusicRef.current.volume = 0.3; 
 

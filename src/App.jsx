@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useHoverSound } from 'portfolio/src/hooks/useHoverSound.js'; 
+import { useHoverSound } from '/src/hooks/useHoverSound.js'; 
 import HackingMiniGame from './HackingMiniGame'; 
 import ShapeGrid from './ShapeGrid'; // <-- Import the new component
 

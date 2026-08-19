@@ -29,7 +29,7 @@ Installation & Setup
 Clone the repository:
 
 Bash
-git clone https://github.com/Ronak-uh/yorha-portfolio.git
+git clone https://github.com/Ronak-uh/Yorha-Portfolio.git
 cd yorha-portfolio
 Install dependencies:
 

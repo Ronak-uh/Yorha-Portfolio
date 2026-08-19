@@ -1,49 +1,92 @@
-YoRHa OS: Interactive Developer Portfolio
-A Nier: Automata inspired interactive web portfolio for Ronak Chavhan, built to showcase software development projects and technical capabilities through an immersive, gamified user experience.
+# YoRHa OS Portfolio
 
-This project goes beyond a standard static resume by placing the user inside a YoRHa terminal. It features functional mini-games, dynamic cursor tracking, audio feedback, and hidden Easter eggs, balanced with accessibility toggles for a professional viewing experience.
+A cinematic, game-inspired portfolio for Ronak Chavhan, built with React and Vite. The project blends a cyberpunk/terminal aesthetic with a developer profile, project showcase, and interactive experience inspired by NieR: Automata.
 
-Core Features
-Immersive Boot Sequence: A cinematic, Linux-style terminal boot-up sequence complete with mechanical audio, system log generation, and progress bars.
+## Overview
 
-Thematic UI & Custom Cursor: A highly stylized interface mimicking the Nier: Automata menus, featuring a custom targeting crosshair, CRT scanline overlays, and custom glitch hover effects.
+This portfolio is designed to be more than a standard resume. It presents the user as a futuristic terminal operator with:
 
-Autonomous Pod Companion: A pure CSS/React animated geometric "Pod" that autonomously roams the screen and dynamically locks onto hovered interactive elements.
+- animated system boot screens
+- themed navigation panels
+- project archives and capability cards
+- custom cursor effects and CRT overlays
+- subtle audio feedback
+- hidden easter eggs and interactive details
 
-Hacking Minigame: A custom HTML5 Canvas twin-stick shooter hidden within the "Data Archives" tab to "decrypt" classified project files.
+## Features
 
-Recruiter (Safe) Mode: An accessible top-left toggle saved to localStorage that instantly disables all sounds, cursors, and boot animations for a frictionless reading experience.
+- Immersive boot sequence and terminal-style layout
+- Custom cursor and CRT scanline effects
+- Dynamic tab-based portfolio sections
+- Skill/plugin card UI for technical strengths
+- Project archive and achievements dashboard
+- Contact section with profile links and resume download
+- Hidden interactive extras for a more playful experience
 
-Hidden Logs & Self-Destruct: Easter eggs triggered by specific interactions, including a 5-spacebar system overload and classified personal logs.
+## Tech Stack
 
-🛠 Tech Stack
-Frontend Framework: React.js
+- React
+- Vite
+- Tailwind CSS
+- HTML5 / CSS animations
+- Custom audio cues and CSS-driven motion effects
 
-Styling: Tailwind CSS
+## Project Structure
 
-Game Engine: HTML5 Canvas (Native API)
+```bash
+portfolio/
+├── public/               # Static assets, sounds, downloadable resume
+├── src/                  # App source code and styling
+├── index.html            # App entry HTML
+├── package.json          # Scripts and dependencies
+├── vite.config.js        # Vite configuration
+├── README.md             # Project documentation
+└── .gitignore            # Git ignore rules
+```
 
-Background Animations: React Bits (ShapeGrid)
+## Getting Started
 
-Installation & Setup
-Clone the repository:
+### 1. Clone the repository
 
-Bash
+```bash
 git clone https://github.com/Ronak-uh/Yorha-Portfolio.git
-cd yorha-portfolio
-Install dependencies:
+cd Yorha-Portfolio
+```
 
-Bash
+### 2. Install dependencies
+
+```bash
 npm install
-Run the development server:
+```
 
-Bash
+### 3. Run locally
+
+```bash
 npm run dev
+```
 
+This starts the Vite development server, usually at:
 
-System Secrets (Easter Eggs) :
-Classified Data: Navigate to DATA_ARCHIVES and engage the encryption protocol to play the hacking minigame.
+```bash
+http://localhost:5173
+```
 
-Override Access: Click the UNIT: R.CHAVHAN text in the sidebar to bypass security and reveal hidden personal data files.
+### 4. Build for production
 
-Black Box Overload: Press SPACEBAR 5 times rapidly while on the main screen. (Warning: Proceed at your own risk).
+```bash
+npm run build
+```
+
+## Notes
+
+- The portfolio uses custom theme colors and typography to match the YoRHa-inspired aesthetic.
+- Sound effects are optional and may be blocked until the user interacts with the page.
+- Some hidden behaviors are intentionally playful and designed to add personality without affecting usability.
+
+## License
+
+This project is for personal portfolio use and is not intended as a reusable public template unless explicitly adapted for that purpose.
+
+## Repository
+
+https://github.com/Ronak-uh/Yorha-Portfolio.git

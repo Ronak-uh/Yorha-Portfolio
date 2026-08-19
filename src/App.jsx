@@ -552,7 +552,7 @@ export default function App() {
               <div className="pt-4 mt-2 border-t border-dashed border-nier-border animate-fade-in cursor-none">
                 <NavButton 
                   recruiterMode={recruiterMode} 
-                  label="[ CLASSIFIED_LOGS ]" 
+                  label="[CLASSIFIED_LOGS]" 
                   isActive={activeTab === 'CLASSIFIED_LOGS'} 
                   onClick={() => { safePlayClick(); setActiveTab('CLASSIFIED_LOGS'); }} 
                   onHoverEnter={(e) => handleElementHover(e)} 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useHoverSound } from '/Users/ronakchavhan/Portfolio/portfolio/src/hooks/useHoverSound.js'; 
-import HackingMinigame from './HackingMinigame'; 
+import { useHoverSound } from 'portfolio/src/hooks/useHoverSound.js'; 
+import HackingMiniGame from './HackingMiniGame'; 
 import ShapeGrid from './ShapeGrid'; // <-- Import the new component
 
 // --- REUSABLE COMPONENTS ---
@@ -657,7 +657,7 @@ export default function App() {
                   )}
 
                   {isHacking && !isFileUnlocked && !recruiterMode && (
-                    <HackingMinigame 
+                    <HackingMiniGame 
                       onHackSuccess={handleHackSuccess}
                       onHackFail={handleHackFail}
                     />

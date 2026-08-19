@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  /* NieR Automata Custom Palette */
+  --color-nier-bg: #dcd8c0;
+  --color-nier-text: #454138;
+  --color-nier-accent: #b24432;
+  --color-nier-border: #9a9483;
+  --color-nier-light: #e8e4cc;
+
+  /* Custom Font */
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* --- NEW ANIMATIONS --- */
+  --animate-fade-in: fade-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-glitch: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+  --animate-blink: blink 1s step-end infinite;
+
+  @keyframes fade-in {
+    0% { opacity: 0; transform: translateY(10px); filter: blur(2px); }
+    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+  }
+
+  @keyframes glitch {
+    0% { transform: translate(0) }
+    20% { transform: translate(-2px, 1px) }
+    40% { transform: translate(-1px, -1px) }
+    60% { transform: translate(2px, 1px) }
+    80% { transform: translate(1px, -1px) }
+    100% { transform: translate(0) }
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+}
+
+body {
+  background-color: var(--color-nier-bg);
+  background-image: 
+    linear-gradient(var(--color-nier-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-nier-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  margin: 0;
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+a, button, [role="button"] {
+  cursor: none;
+}
+
+/* CRT Scanline Overlay */
+.crt-overlay {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0,0,0,0.05) 50%,
+    rgba(0,0,0,0.05)
+  );
+  background-size: 100% 4px;
+  z-index: 50;
+  opacity: 0.8;
+}
+
+/* Typewriter CSS Effect */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 1.5s steps(40, end);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes extreme-glitch {
+  0% { transform: translate(0) scale(1); filter: hue-rotate(0deg); }
+  20% { transform: translate(-10px, 5px) scale(1.02); filter: hue-rotate(90deg); opacity: 0.8; }
+  40% { transform: translate(10px, -5px) scale(0.98); filter: hue-rotate(-90deg); opacity: 0.9; }
+  60% { transform: translate(-20px, 10px) skewX(5deg); opacity: 0.5; }
+  80% { transform: translate(20px, -10px) scale(1.05); filter: hue-rotate(180deg); opacity: 0.8; }
+  100% { transform: translate(0) scale(1); filter: hue-rotate(0deg); }
+}
+
+.animate-extreme-glitch {
+  animation: extreme-glitch 0.15s infinite;
+}
+
+/* --- CRT OVERLAY & VIGNETTE --- */
+.crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50; /* Above content, below custom cursor/modals */
+  background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.05) 50% /* Subtle scanline darkness */
+    );
+  background-size: 100% 4px;
+  animation: scanlines 10s linear infinite;
+}
+
+.crt-overlay::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* Darkens the edges of the screen */
+  background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.15) 100%);
+  z-index: 51;
+}
+
+@keyframes scanlines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100vh; }
+}
+
+/* --- CHROMATIC ABERRATION HOVER EFFECT --- */
+.chromatic-hover {
+  transition: text-shadow 0.1s ease-in-out;
+}
+
+.chromatic-hover:hover {
+  /* Splits the text into Red and Cyan layers */
+  text-shadow: 2px 0 0 rgba(255, 0, 0, 0.8), -2px 0 0 rgba(0, 255, 255, 0.8);
+  animation: chromatic-shake 0.2s infinite;
+}
+
+@keyframes chromatic-shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 1px); }
+  75% { transform: translate(1px, 1px); }
+  100% { transform: translate(0, 0); }
+}
